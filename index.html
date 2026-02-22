@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai.stories - Premium Graduation Price List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
@@ -28,20 +30,18 @@
             color: var(--text-light);
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            padding: 50px 20px;
             overflow-x: hidden;
+        }
+
+        /* Wrapper utama untuk padding */
+        .main-content {
+            padding: 60px 20px;
         }
 
         /* Animasi Keren */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .animate-up {
@@ -53,9 +53,13 @@
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
 
+        /* Header */
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h1 {
@@ -68,12 +72,22 @@
         }
 
         .subtitle {
-            font-size: 1rem;
-            color: var(--text-muted);
+            font-size: 1.1rem;
+            color: var(--gold-primary);
             letter-spacing: 4px;
             text-transform: uppercase;
+            margin-bottom: 25px;
+            font-weight: 500;
         }
 
+        .intro-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Grid Paket */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -89,6 +103,8 @@
             border: 1px solid rgba(212, 175, 55, 0.1);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
@@ -99,7 +115,7 @@
 
         .img-container {
             width: 100%;
-            height: 400px;
+            height: 350px;
             overflow: hidden;
         }
 
@@ -119,6 +135,9 @@
             position: relative;
             background: linear-gradient(to top, var(--card-bg) 80%, transparent);
             margin-top: -20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         h2 {
@@ -141,6 +160,7 @@
         ul {
             list-style: none;
             margin-bottom: 30px;
+            flex-grow: 1;
         }
 
         ul li {
@@ -173,6 +193,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            margin-top: auto;
         }
 
         .btn-book:hover {
@@ -181,14 +202,14 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
-        /* Glassmorphism Sections */
+        /* Glassmorphism Section (Side Extra) */
         .glass-section {
             max-width: 1200px;
-            margin: 50px auto;
+            margin: 60px auto 20px;
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             padding: 40px;
             border-radius: 16px;
         }
@@ -196,7 +217,7 @@
         .glass-section h3 {
             font-family: 'Cinzel', serif;
             color: var(--gold-primary);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-size: 1.8rem;
             text-align: center;
         }
@@ -210,8 +231,8 @@
         .extra-item {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+            padding-bottom: 12px;
             color: var(--text-muted);
             font-size: 1rem;
         }
@@ -221,79 +242,226 @@
             font-weight: 500;
         }
 
+        /* Professional Footer */
+        footer {
+            background-color: #050505;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 60px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-col p i {
+            color: var(--gold-primary);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--gold-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold-primary);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 0.85rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .img-container { height: 300px; }
-            .glass-section { padding: 25px; }
+            .img-container { height: 280px; }
+            .footer-content { text-align: center; }
+            .footer-col p { justify-content: center; }
+            .social-links { justify-content: center; }
         }
     </style>
 </head>
-<div class="grid-container">
-        <div class="card animate-up delay-1">
-            <div class="img-container">
-                <img src="image/foto1.jpg" alt="Side Portrait" class="card-img" style="object-position: 80% 40%;">
+<body>
+
+    <div class="main-content">
+        <header class="animate-up">
+            <h1>Sai.stories</h1>
+            <p class="subtitle">Premium Graduation Photography</p>
+            <p class="intro-text">
+                Setiap pencapaian pantas dirayakan dan diabadikan dengan sempurna. Kami hadir untuk menangkap senyum bangga, tawa bahagia, dan momen tak terlupakan di hari kelulusanmu. Dengan sentuhan visual sinematik dan tata warna yang elegan, biarkan karya kami yang bercerita. Pilih paket yang paling pas untukmu di bawah ini.
+            </p>
+        </header>
+
+        <div class="grid-container">
+            <div class="card animate-up delay-1">
+                <div class="img-container">
+                    <img src="image/foto1.jpg" alt="Side Portrait" class="card-img" style="object-position: 80% 40%;">
+                </div>
+                <div class="card-content">
+                    <h2>Side Portrait</h2>
+                    <span class="price">IDR 250.000</span>
+                    <ul>
+                        <li>1 Graduate (with family)</li>
+                        <li>30 Minute photo session</li>
+                        <li>5 Edited photos</li>
+                        <li>All Files via G-Drive (30 days)</li>
+                    </ul>
+                    <a href="https://wa.me/6285253365498?text=Halo%20Sai.stories,%20saya%20mau%20booking%20sesi%20foto%20wisuda%20untuk%20paket%20Side%20Portrait%20(30%20Menit)." target="_blank" class="btn-book">Book Session</a>
+                </div>
             </div>
-            <div class="card-content">
-                <h2>Side Portrait</h2>
-                <span class="price">IDR 250.000</span>
-                <ul>
-                    <li>1 Graduate (with family)</li>
-                    <li>30 Minute photo session</li>
-                    <li>5 Edited photos</li>
-                    <li>All Files via G-Drive (30 days)</li>
-                </ul>
-                <a href="https://wa.me/6285253365498?text=Halo%20Sai.stories,%20saya%20mau%20booking%20sesi%20foto%20wisuda%20untuk%20paket%20Side%20Portrait%20(30%20Menit)." target="_blank" class="btn-book">Book Session</a>
+
+            <div class="card animate-up delay-1">
+                <div class="img-container">
+                   <img src="image/foto2.jpg" alt="Side Portrait" class="card-img" style="object-position: 50% 50%;">
+                </div>
+                <div class="card-content">
+                    <h2>Side Portrait</h2>
+                    <span class="price">IDR 350.000</span>
+                    <ul>
+                        <li>1 Graduate (with family)</li>
+                        <li>60 Minute photo session</li>
+                        <li>10 Edited photos</li>
+                        <li>All Files via G-Drive (30 days)</li>
+                    </ul>
+                    <a href="https://wa.me/6285253365498?text=Halo%20Sai.stories,%20saya%20mau%20booking%20sesi%20foto%20wisuda%20untuk%20paket%20Side%20Portrait%20(1%20Jam)." target="_blank" class="btn-book">Book Session</a>
+                </div>
+            </div>
+
+            <div class="card animate-up delay-2">
+                <div class="img-container">
+                   <img src="image/foto3.jpg" alt="Side Couple" class="card-img" style="object-position: 50% 80%;">
+                </div>
+                <div class="card-content">
+                    <h2>Side Couple</h2>
+                    <span class="price">IDR 500.000</span>
+                    <ul>
+                        <li>2 Graduates (without family)</li>
+                        <li>60 Minute photo session</li>
+                        <li>15 Edited photos</li>
+                        <li>All Files via G-Drive (30 days)</li>
+                    </ul>
+                    <a href="https://wa.me/6285253365498?text=Halo%20Sai.stories,%20saya%20mau%20booking%20sesi%20foto%20wisuda%20untuk%20paket%20Side%20Couple." target="_blank" class="btn-book">Book Session</a>
+                </div>
+            </div>
+
+            <div class="card animate-up delay-2">
+                <div class="img-container">
+                    <img src="image/DSC02678.jpg" alt="Side Group" class="card-img" style="object-position: 50% 20%;">
+                </div>
+                <div class="card-content">
+                    <h2>Side Group</h2>
+                    <span class="price">IDR 650.000</span>
+                    <ul>
+                        <li>Max 5 graduates (group only)</li>
+                        <li>60 Minute photo session</li>
+                        <li>30 Edited photos</li>
+                        <li>Add graduate: +100K/person</li>
+                    </ul>
+                    <a href="https://wa.me/6285253365498?text=Halo%20Sai.stories,%20saya%20mau%20booking%20sesi%20foto%20wisuda%20untuk%20paket%20Side%20Group." target="_blank" class="btn-book">Book Session</a>
+                </div>
             </div>
         </div>
 
-        <div class="card animate-up delay-1">
-            <div class="img-container">
-               <img src="image/foto2.jpg" alt="Side Portrait" class="card-img" style="object-position: 50% 50%;">
+        <div class="glass-section animate-up delay-3">
+            <h3>Side Extra & Notes</h3>
+            <div class="extra-grid">
+                <div class="extra-item">
+                    <span>Tambah Edit (5 Foto)</span>
+                    <span>Rp 30.000</span>
+                </div>
+                <div class="extra-item">
+                    <span>Tambah Durasi (30 Menit)</span>
+                    <span>Rp 200.000</span>
+                </div>
+                <div class="extra-item">
+                    <span>Transport Luar Kampus</span>
+                    <span>Rp 50.000</span>
+                </div>
+                <div class="extra-item">
+                    <span>Cetak 12R + Frame</span>
+                    <span>Rp 100.000</span>
+                </div>
             </div>
-            <div class="card-content">
-                <h2>Side Portrait</h2>
-                <span class="price">IDR 350.000</span>
-                <ul>
-                    <li>1 Graduate (with family)</li>
-                    <li>60 Minute photo session</li>
-                    <li>10 Edited photos</li>
-                    <li>All Files via G-Drive (30 days)</li>
-                </ul>
-                <a href="https://wa.me/6285253365498?text=Halo%20Sai.stories,%20saya%20mau%20booking%20sesi%20foto%20wisuda%20untuk%20paket%20Side%20Portrait%20(1%20Jam)." target="_blank" class="btn-book">Book Session</a>
-            </div>
-        </div>
-
-        <div class="card animate-up delay-2">
-            <div class="img-container">
-               <img src="image/foto3.jpg" alt="Side Portrait" class="card-img" style="object-position: 50% 80%;">
-            </div>
-            <div class="card-content">
-                <h2>Side Couple</h2>
-                <span class="price">IDR 500.000</span>
-                <ul>
-                    <li>2 Graduates (without family)</li>
-                    <li>60 Minute photo session</li>
-                    <li>15 Edited photos</li>
-                    <li>All Files via G-Drive (30 days)</li>
-                </ul>
-                <a href="https://wa.me/6285253365498?text=Halo%20Sai.stories,%20saya%20mau%20booking%20sesi%20foto%20wisuda%20untuk%20paket%20Side%20Couple." target="_blank" class="btn-book">Book Session</a>
-            </div>
-        </div>
-
-        <div class="card animate-up delay-2">
-            <div class="img-container">
-                <img src="image/DSC02678.jpg" alt="Side Portrait" class="card-img" style="object-position: 50% 20%;">
-            </div>
-            <div class="card-content">
-                <h2>Side Group</h2>
-                <span class="price">IDR 650.000</span>
-                <ul>
-                    <li>Max 5 graduates (group only)</li>
-                    <li>60 Minute photo session</li>
-                    <li>30 Edited photos</li>
-                    <li>Add graduate: +100K/person</li>
-                </ul>
-                <a href="https://wa.me/6285253365498?text=Halo%20Sai.stories,%20saya%20mau%20booking%20sesi%20foto%20wisuda%20untuk%20paket%20Side%20Group." target="_blank" class="btn-book">Book Session</a>
+            
+            <div style="margin-top: 35px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; color: var(--text-muted); text-align: center; font-size: 0.9rem;">
+                <p><i class="fa-solid fa-circle-info" style="color: var(--gold-primary); margin-right: 5px;"></i> Harga di atas sudah termasuk biaya transportasi untuk sesi foto di dalam area kampus.</p>
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Sai.stories</h4>
+                <p>Mengabadikan momen dengan sentuhan warna sinematik dan komposisi visual yang bercerita. Mari ciptakan memori indah di hari spesialmu.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fa-brands fa-whatsapp"></i> +62 852 5336 5498</p>
+                <p><i class="fa-regular fa-envelope"></i> booking@saistories.com</p>
+                <p><i class="fa-solid fa-location-dot"></i> Mataram, Lombok - NTB</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <p>Lihat portofolio dan hasil karya kami di media sosial:</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/sai.stories" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    
+                    <a href="https://wa.me/6285253365498" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sai.stories. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
